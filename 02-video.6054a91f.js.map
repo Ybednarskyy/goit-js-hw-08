@@ -1,0 +1,1 @@
+{"mappings":"2oBAAO,MAAMA,EAAaC,IACxBC,QAAQC,IAAIF,EAAO,C","sources":["src/js/02-video.js"],"sourcesContent":["export const showMesage = mesage => {\n  console.log(mesage);\n};\n"],"names":["$c006019e0678fe87$export$ccbeb7ed17d5793e","mesage","console","log"],"version":3,"file":"02-video.6054a91f.js.map"}
