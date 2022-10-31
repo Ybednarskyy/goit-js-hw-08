@@ -17,7 +17,7 @@ refs.form.addEventListener('input', throttle(onTextInput, 500));
 // Зберігає в local storage введені дані
 function onTextInput(evt) {
   formData[evt.target.name] = evt.target.value;
-  //   console.log(formData);
+  console.log(formData);
   localStorage.setItem('formData', JSON.stringify(formData));
 }
 
@@ -36,11 +36,15 @@ function onFormSubmit(evt) {
 function populateTextArea() {
   const savedData = JSON.parse(localStorage.getItem('formData'));
 
-  if (savedData.email) {
-    refs.email.value = savedData.email;
-  }
+  try {
+    if (savedData.email) {
+      refs.email.value = savedData.email;
+    }
 
-  if (savedData.message) {
-    refs.message.value = savedData.message;
+    if (savedData.message) {
+      refs.message.value = savedData.message;
+    }
+  } catch (e) {
+    console.log(e.message);
   }
 }
