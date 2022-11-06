@@ -18,4 +18,9 @@ function timeupdateHandler(data) {
 const currentTime = JSON.parse(
   localStorage.getItem('videoplayer-current-time')
 );
-player.setCurrentTime(currentTime);
+
+if (!localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(0);
+} else {
+  player.setCurrentTime(currentTime);
+}
