@@ -16,6 +16,13 @@ refs.form.addEventListener('input', throttle(onTextInput, 500));
 
 // Зберігає в local storage введені дані
 function onTextInput(evt) {
+  if (refs.email.value) {
+    formData.email = refs.email.value;
+  }
+  if (refs.message.value) {
+    formData.message = refs.message.value;
+  }
+
   formData[evt.target.name] = evt.target.value;
   console.log(formData);
   localStorage.setItem('formData', JSON.stringify(formData));
@@ -40,7 +47,6 @@ function populateTextArea() {
     if (savedData.email) {
       refs.email.value = savedData.email;
     }
-
     if (savedData.message) {
       refs.message.value = savedData.message;
     }
